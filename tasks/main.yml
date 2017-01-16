@@ -1,0 +1,7 @@
+---
+- name: Build apache_docker image
+  docker_image:
+    name: docker_image
+    tag: v0.5
+    archive_path: '{{ docker_path }}'
+    state: present
