@@ -1,7 +1,12 @@
 ---
 - name: Build apache_docker image
   docker_image:
-    name: docker_image
-    tag: v0.5
-    archive_path: '{{ docker_path }}'
+    name: quirioo/apache
     state: present
+
+- name: Start apache_docker container
+  docker_container:
+    name: apache
+    image: quirioo/apache
+    state: started
+    network_mode: host
